@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Payment methods",
+  "FriendlyName": "Sadad",
+  "SystemName": "Payments.Sadad",
+  "Version": "1.0",
+  "SupportedVersions": [ "4.20" ],
+  "Author": "nopSmart team",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Payments.Sadad.dll",
+  "Description": "This plugin allows paying with Sadad"
+}

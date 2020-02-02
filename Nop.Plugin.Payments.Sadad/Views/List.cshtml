@@ -1,0 +1,83 @@
+﻿@using Nop.Web.Framework.Models.DataTables
+@using Nop.Plugin.Payments.Sadad.Models
+
+@using Nop.Core.Domain.Catalog;
+@{
+    Layout = "_ConfigurePlugin";
+}
+
+<form asp-controller="PaymentSadad" asp-action="PaymentList" method="post">
+    <div class="content">
+        <div class="form-horizontal">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        @await Html.PartialAsync("Table", new DataTablesModel
+                   {
+                       Name = "payments-grid",
+                       UrlRead = new DataUrl("PaymentList", "PaymentSadad", null),
+                       Length = Model.PageSize,
+                       LengthMenu = Model.AvailablePageSizes,
+                       ColumnCollection = new List<ColumnProperty>
+                            {
+                                new ColumnProperty(nameof(SadadGatewayPaymentModel.Id))
+                                {
+                                    Title = T("Plugins.Payments.Sadad.Fields.Id").Text,
+                                    Width = "50"
+                                },
+                                new ColumnProperty(nameof(SadadGatewayPaymentModel.OrderId))
+                                {
+                                    Title = T("Plugins.Payments.Sadad.Fields.OrderId").Text,
+                                    Width = "50"
+                                },
+                                new ColumnProperty(nameof(SadadGatewayPaymentModel.Amount))
+                                {
+                                    Title = T("Plugins.Payments.Sadad.Fields.Amount").Text,
+                                    Width = "120"
+                                },
+                                new ColumnProperty(nameof(SadadGatewayPaymentModel.ClientIPAddress))
+                                {
+                                    Title = T("Plugins.Payments.Sadad.Fields.ClientIPAddress").Text,
+                                    Width = "120"
+                                },
+                                new ColumnProperty(nameof(SadadGatewayPaymentModel.CreatedOn))
+                                {
+                                    Title = T("Plugins.Payments.Sadad.Fields.CreatedOn").Text,
+                                    Width = "150",
+                                    Render = new RenderDate()
+                                },
+                                new ColumnProperty(nameof(SadadGatewayPaymentModel.RequestedKeyOn))
+                                {
+                                    Title = T("Plugins.Payments.Sadad.Fields.RequestedKeyOn").Text,
+                                    Width = "150",
+                                    Render = new RenderDate()
+                                },
+                                new ColumnProperty(nameof(SadadGatewayPaymentModel.ReturnedFromBankSiteOn))
+                                {
+                                    Title = T("Plugins.Payments.Sadad.Fields.ReturnedFromBankSiteOn").Text,
+                                    Width = "150",
+                                    Render = new RenderDate()
+                                },
+                                new ColumnProperty(nameof(SadadGatewayPaymentModel.PaymentVerificationOn))
+                                {
+                                    Title = T("Plugins.Payments.Sadad.Fields.PaymentVerificationOn").Text,
+                                    Width = "150",
+                                    Render = new RenderDate()
+                                },
+                                new ColumnProperty(nameof(SadadGatewayPaymentModel.PaymentSucceed))
+                                {
+                                    Title = T("Plugins.Payments.Sadad.Fields.PaymentSucceed").Text,
+                                    Width = "100",
+                                    ClassName = NopColumnClassDefaults.CenterAll,
+                                    Render = new RenderBoolean()
+                                }
+                            }
+                   })
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>

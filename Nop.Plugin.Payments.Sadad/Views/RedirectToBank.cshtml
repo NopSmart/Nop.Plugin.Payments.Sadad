@@ -1,0 +1,64 @@
+﻿@{
+    Layout = "";
+}
+<script language="javascript" type="text/javascript">
+    function postSadadData(CardAcqID, AmountTrans, ORDERID, TerminalID, TimeStamp, FP, RedirectURL, MerchantAdditionalData, CustomerEmailAddress) {
+        var form = document.createElement("form");
+        form.setAttribute("method", "POST");
+        form.setAttribute("action", "https://sadad.shaparak.ir/Purchase");
+        form.setAttribute("target", "_self");
+        //
+        var hf1 = document.createElement("input");
+        hf1.setAttribute("name", "CardAcqID");
+        hf1.setAttribute("value", CardAcqID);
+        form.appendChild(hf1);
+        //
+        var hf2 = document.createElement("input");
+        hf2.setAttribute("name", "AmountTrans");
+        hf2.setAttribute("value", AmountTrans);
+        form.appendChild(hf2);
+        //ORDERID
+        var hf3 = document.createElement("input");
+        hf3.setAttribute("name", "ORDERID");
+        hf3.setAttribute("value", ORDERID);
+        form.appendChild(hf3);
+        //TerminalID
+        var hf4 = document.createElement("input");
+        hf4.setAttribute("name", "TerminalID");
+        hf4.setAttribute("value", TerminalID);
+        form.appendChild(hf4);
+        //TimeStamp
+        var hf5 = document.createElement("input");
+        hf5.setAttribute("name", "TimeStamp");
+        hf5.setAttribute("value", TimeStamp);
+        form.appendChild(hf5);
+        //FP
+        var hf5 = document.createElement("input");
+        hf5.setAttribute("name", "FP");
+        hf5.setAttribute("value", FP);
+        form.appendChild(hf5);
+        //RedirectURL
+        var hf6 = document.createElement("input");
+        hf6.setAttribute("name", "RedirectURL");
+        hf6.setAttribute("value", RedirectURL);
+        form.appendChild(hf6);
+        //MerchantAdditionalData
+        var hf7 = document.createElement("input");
+        hf7.setAttribute("name", "MerchantAdditionalData");
+        hf7.setAttribute("value", MerchantAdditionalData);
+        form.appendChild(hf7);
+        //CustomerEmailAddress
+        var hf8 = document.createElement("input");
+        hf8.setAttribute("name", "CustomerEmailAddress");
+        hf8.setAttribute("value", CustomerEmailAddress);
+        form.appendChild(hf8);
+
+        document.body.appendChild(form);
+        form.submit();
+        document.body.removeChild(form);
+    }
+</script>
+
+<div class="alter alter-primary text-center">
+    @Html.Raw(ViewBag.PaymentMessage)
+</div>
