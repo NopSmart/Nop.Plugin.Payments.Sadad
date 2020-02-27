@@ -12,6 +12,7 @@
     <OutputPath>..\..\Presentation\Nop.Web\Plugins\Payments.Sadad</OutputPath>
     <OutDir>$(OutputPath)</OutDir>
     <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

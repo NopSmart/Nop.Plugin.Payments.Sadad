@@ -191,7 +191,7 @@ namespace Nop.Plugin.Payments.Sadad.Controllers
         [Area(AreaNames.Admin)]
         public virtual IActionResult PaymentList(SadadGatewayPaymentSearchModel searchModel)
         {
-            if (!_permissionService.Authorize(StandardPermissionProvider.ManageProducts))
+            if (!_permissionService.Authorize(StandardPermissionProvider.ManagePaymentMethods))
                 return AccessDeniedDataTablesJson();
 
             //prepare model

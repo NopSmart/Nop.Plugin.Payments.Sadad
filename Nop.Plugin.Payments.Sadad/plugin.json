@@ -2,7 +2,7 @@
   "Group": "Payment methods",
   "FriendlyName": "Sadad",
   "SystemName": "Payments.Sadad",
-  "Version": "1.0",
+  "Version": "1.01",
   "SupportedVersions": [ "4.20" ],
   "Author": "nopSmart team",
   "DisplayOrder": 1,
